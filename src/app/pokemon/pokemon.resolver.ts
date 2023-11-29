@@ -7,9 +7,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class  PokemonResolver implements Resolve<any> {
-  constructor(private router: Router, private service: PokemonService) { }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+export class  PokemonResolver {
+  constructor( private service: PokemonService) { }
+  resolve(): Observable<any> {
     let pokemon = of({});
 
     pokemon = this.service.getpokemon();
